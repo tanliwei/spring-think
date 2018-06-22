@@ -5,6 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * Spring 的监听事件 ApplicationListener 和 ApplicationEvent 用法
  * https://blog.csdn.net/sinat_33625560/article/details/78605367
  */
 @Configuration

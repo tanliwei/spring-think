@@ -5,7 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 /***
- *
+ * Spring 的监听事件 ApplicationListener 和 ApplicationEvent 用法
  * @ClassName(类名)      : DemoPublisher
  * @Description(描述)    : 事件发布类
  * @author(作者)         ：吴桂镇
