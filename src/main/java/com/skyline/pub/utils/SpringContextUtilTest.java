@@ -14,7 +14,12 @@ public class SpringContextUtilTest {
                 new AnnotationConfigApplicationContext("com.skyline");
         SpringContextUtilTest springContextUtilTest = (SpringContextUtilTest) context.getBean("springContextUtilTest");
         SpringContextUtilTest springContextUtilTest2 = (SpringContextUtilTest) SpringContextUtil.getBean("springContextUtilTest");
+        SpringContextUtilTest springContextUtilTest3 = (SpringContextUtilTest) SpringContextUtil.getBeanByClassName("com.skyline.pub.utils.SpringContextUtilTest");
+         springContextUtilTest3 = (SpringContextUtilTest) SpringContextUtil.getBeanByClassName("com.skyline.pub.utils.SpringContextUtilTest");
+         springContextUtilTest3 = (SpringContextUtilTest) SpringContextUtil.getBeanByClassName("com.skyline.pub.utils.SpringContextUtilTest");
+         springContextUtilTest3 = (SpringContextUtilTest) SpringContextUtil.getBeanByClassName("com.skyline.pub.utils.SpringContextUtilTest");
         System.out.println(springContextUtilTest == springContextUtilTest2);
+        System.out.println(springContextUtilTest == springContextUtilTest3);
 
 
     }

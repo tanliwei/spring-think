@@ -1,4 +1,4 @@
-package com.skyline.pub.utils;
+package com.cnblogs.jurendage;
 
 /**
  * @create 2018/7/2

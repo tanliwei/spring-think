@@ -1,6 +1,6 @@
-package com.skyline.pub.utils;
+package com.cnblogs.jurendage;
 
-import org.springframework.stereotype.Component;
+import com.skyline.pub.utils.SpringContextUtil;
 import org.springframework.util.ReflectionUtils;
 import org.springframework.util.StringUtils;
 
@@ -37,6 +37,9 @@ public class ScheduleRunnable implements Callable {
      */
     @Override
     public Object call() throws Exception {
+        System.out.println(Thread.currentThread().getName());
+        //模拟子线程执行任务耗时
+        Thread.sleep(1000*10);
         ReflectionUtils.makeAccessible(method);
         if (!StringUtils.isEmpty(params)) {
             method.invoke(target, params);

@@ -26,6 +26,17 @@ public class SpringContextUtil implements ApplicationContextAware {
         return (T) context.getBean(beanName);
     }
 
+    //通过 clazzName 获取bean对象
+    public static <T> T getBeanByClassName(String clazzName){
+        try {
+            Class clazz = Class.forName(clazzName);
+            return (T) context.getBean(clazz);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public static String getMessage(String key){
         return context.getMessage(key, null, Locale.getDefault());
     }
