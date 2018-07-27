@@ -1,5 +1,6 @@
 package cn.tanlw.spring.config;
 
+import org.junit.Test;
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.core.io.InputStreamResource;
 
@@ -32,5 +33,37 @@ public class YamlPropertiesFactoryBeanTest {
 //            e.printStackTrace();
 //        }
         System.out.println(properties.get("a.b.c"));
+    }
+
+
+    @Test
+    public void test(){
+        String input = "spec:\n" +
+                "  selector:\n" +
+                "    k: noa\n" +
+                "  ports:\n" +
+                "    - name: web\n" +
+                "      port: 8080\n" +
+                "      targetPort: 8080\n" +
+                "    - name: server\n" +
+                "      port: 9191\n" +
+                "      targetPort: 9191\n" +
+                "---\n" +
+                "api: ext\n" +
+                "kind: Ingress";
+        YamlPropertiesFactoryBean yaml = new YamlPropertiesFactoryBean();
+        yaml.setResources(new InputStreamResource(new ByteArrayInputStream(input.getBytes())));//File引入
+        Properties properties = yaml.getObject();
+        /**
+         * noa
+         * web
+         * server
+         * ext
+         */
+        System.out.println(properties.get("spec.selector.k"));
+        System.out.println(properties.get("spec.ports[0].name"));
+        System.out.println(properties.get("spec.ports[1].name"));
+        System.out.println(properties.get("api"));
+
     }
 }

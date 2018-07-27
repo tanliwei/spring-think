@@ -44,7 +44,7 @@ public class FactoryBeanTest implements FactoryBean {
 
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext configApplicationContext = new AnnotationConfigApplicationContext("spring.think");
+        AnnotationConfigApplicationContext configApplicationContext = new AnnotationConfigApplicationContext("spring.think.ch09");
         FactoryBeanTest factoryBeanTest = (FactoryBeanTest) configApplicationContext.getBean("factoryBeanTest");
         /**
          * 继承FactoryBean:a - 1
