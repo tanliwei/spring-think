@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="httpInvoker" class="spring.think.ch12.httpInvoker.HttpInvokerIImpl"/>
+    <bean name="/httpExporter" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" ref="httpInvoker"/>
+        <property name="serviceInterface" value="spring.think.ch12.httpInvoker.HttpInvokerI"/>
+    </bean>
+</beans>
