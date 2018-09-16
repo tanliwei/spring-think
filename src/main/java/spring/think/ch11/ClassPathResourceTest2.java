@@ -9,7 +9,7 @@ import java.util.Properties;
 
 /**
  * Spring之ClassPathResource加载资源文件
- * https://www.cnblogs.com/ruiati/p/6225093.html
+ * --https://www.cnblogs.com/ruiati/p/6225093.html
  * @create 2018/7/27
  */
 public class ClassPathResourceTest2 {

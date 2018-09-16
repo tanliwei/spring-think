@@ -27,5 +27,6 @@
         <property name="connectionFactory" ref="connectionFactory"/>
         <property name="destination" ref="destination"/>
         <property name="messageListener" ref="myTextListener"/>
+        <!--<property name="transactionManager"/>-->
     </bean>
 </beans>
