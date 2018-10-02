@@ -8,6 +8,10 @@ public class Main {
         ApplicationContext bf =
                 new ClassPathXmlApplicationContext("ch03/replaceMethodTest.xml");
         TestChangeMethod test = (TestChangeMethod) bf.getBean("testChangeMethod");
+        /**
+         * Console:
+         * 我替换了原有的方法
+         */
         test.changeMe();
     }
 }

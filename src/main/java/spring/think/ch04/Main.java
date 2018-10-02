@@ -1,4 +1,4 @@
-package spring.think.ch03.lookupMethod;
+package spring.think.ch04;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -7,12 +7,12 @@ public class Main {
 
     public static void main(String[] args) {
         ApplicationContext bf =
-                new ClassPathXmlApplicationContext("ch03/lookupTest.xml");
-        GetBeanTest getBeanTest = (GetBeanTest)bf.getBean("getBeanTest");
+                new ClassPathXmlApplicationContext("ch04/test.xml");
+        User user = (User) bf.getBean("testbean");
         /**
          * Console:
-         * I am student
+         * aaa,bbb
          */
-        getBeanTest.showMe();
+        System.out.println(user.getUserName()+","+user.getEmail());
     }
 }
