@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userManager" class="spring.think.ch06.customerEditorConfigurer.UserManager">
+        <property name="dataValue">
+            <value>2013-03-15</value>
+        </property>
+    </bean>
+    <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="customEditors">
+            <map>
+                <!-- Spring4.0 后使用了新类型-->
+                <!-- CustomPropertyEditor http://codeomitted.com/custompropertyeditor/ -->
+                <entry key="java.util.Date" value="spring.think.ch06.customerEditorConfigurer.DatePropertyEditor"/>
+            </map>
+        </property>
+    </bean>
+</beans>
